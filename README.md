@@ -133,7 +133,7 @@ El resultado depende por tanto de la puntería, la elección de ruta, el conocim
 | Josué Morera | Cliente | Lógica del juego del lado del cliente, modelo de estado e interacción en el tablero. |
 | Jean Aguilar | Diseño | Wireframes e identidad visual, documentación (`design.md`, `README.md`), y verificación de que las reglas funcionen y de que nada se rompa entre entregas. |
 | Adrián Rodríguez | Frontend | Estructura semántica del HTML, diseño responsive y cumplimiento de validadores y linters. Lidera las entregas de HTML y CSS. |
-
+| Jordan Obando Brenes| |
 
 ## 5. Tecnologías previstas
 
