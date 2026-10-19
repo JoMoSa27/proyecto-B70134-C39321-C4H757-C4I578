@@ -154,3 +154,13 @@ En fase de propuesta. Pendiente de aprobación de la Entrega 1.
 ## 7. Originalidad
 
 El proyecto parte del género *battle royale* en dos dimensiones e introduce las adaptaciones descritas en las reglas 6, 7 y 8. Todo el arte, mapa, armas, interfaz y nomenclatura son originales. No se reutilizará código fuente de implementaciones existentes del género.
+
+---
+
+## 8. Sitio publicado
+
+A partir de la Entrega 2, cada entrega se revisa sobre la versión publicada en GitHub Pages.
+
+- **URL:** *pendiente — agregar el enlace una vez publicado el sitio.*
+
+Ver [`CONTRIBUTING.md`](./CONTRIBUTING.md) para las convenciones de maquetado de esta entrega.
