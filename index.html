@@ -1,33 +1,40 @@
 <!DOCTYPE html>
 <html lang="es" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Inicio — WAR BATTLE.IO</title>
-<link rel="icon" href="favicon.svg" type="image/svg+xml"/>
-</head>
-<body>
-<header>
-<a href="index.html"><img src="favicon.svg" alt="Logo de WAR BATTLE.IO" width="40" height="40" /></a>
-<p>WAR BATTLE.IO</p>
-<nav>
-<ul>
-<li><a href="index.html">Inicio</a></li>
-<li><a href="faqs.html">Reglas</a></li>
-<li><a href="about.html">About</a></li>
-</ul>
-</nav>
-</header>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Inicio — WAR BATTLE.IO</title>
+        <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+    </head>
+    <body>
+        <header>
+            <a href="index.html"><img src="favicon.svg" alt="Logo de WAR BATTLE.IO" width="40" height="40" /></a>
+            <p>WAR BATTLE.IO</p>
+            <nav>
+            <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="faqs.html">Reglas</a></li>
+            <li><a href="about.html">About</a></li>
+            </ul>
+            </nav>
+        </header>
 
-<main>
-<h1>WAR BATTLE.IO</h1>
-<!-- TODO equipo: pantalla de Inicio — imagen del juego, campo de nickname y botón Jugar (ver design/wireframes/01-bienvenida-inicio.png, el wireflow tiene la miniatura correcta). -->
-<p>Contenido pendiente — pantalla de Inicio.</p>
-</main>
+        <main>
+            <h1>WAR BATTLE.IO</h1>
+            <div class="contenedor-imagen">
+                <img src="design/wireframes/01-inicio.png" alt="War Battle.io Logo" class="imagen-juego">
+            </div>
 
-<footer>
-<p>&copy; 2026 Aura Farmers</p>
-<p><a href="https://github.com/JoMoSa27/proyecto-B70134-C39321-C4H757-C4I578">GitHub</a> · <a href="about.html">Créditos</a> · UCR</p>
-</footer>
-</body>
+            <form action="/juego" method="POST" class="formulario-inicio">
+                <input type="text" class="barra-nombre" name="nombre-usuario" placeholder="Ingresa tu nickname..." required>
+                
+                <button type="submit" class="boton-jugar">Jugar</button>
+            </form>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Aura Farmers</p>
+            <p><a href="https://github.com/JoMoSa27/proyecto-B70134-C39321-C4H757-C4I578">GitHub</a> · <a href="about.html">Créditos</a> · UCR</p>
+        </footer>
+    </body>
 </html>
