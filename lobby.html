@@ -1,33 +1,85 @@
 <!DOCTYPE html>
 <html lang="es" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Lobby — WAR BATTLE.IO</title>
-<link rel="icon" href="favicon.svg" type="image/svg+xml"/>
-</head>
-<body>
-<header>
-<a href="index.html"><img src="favicon.svg" alt="Logo de WAR BATTLE.IO" width="40" height="40" /></a>
-<p>WAR BATTLE.IO</p>
-<nav>
-<ul>
-<li><a href="index.html">Inicio</a></li>
-<li><a href="faqs.html">Reglas</a></li>
-<li><a href="about.html">About</a></li>
-</ul>
-</nav>
-</header>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Lobby — WAR BATTLE.IO</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+  </head>
 
-<main>
-<h1>Lobby</h1>
-<!-- TODO equipo: código de sala, lista de jugadores conectados con estado Listo/Esperando, botones Listo/Salir (ver design/wireframes/02-lobby.png). -->
-<p>Contenido pendiente — pantalla de Lobby.</p>
-</main>
+  <body>
+    <header class="encabezado">
+        <a href="index.html" class="enlace-logo">
+            <img src="favicon.svg"
+                alt="Logo de WAR BATTLE.IO"
+                width="40"
+                height="40"
+                class="logo"/>
+        </a>
 
-<footer>
-<p>&copy; 2026 Aura Farmers</p>
-<p><a href="https://github.com/JoMoSa27/proyecto-B70134-C39321-C4H757-C4I578">GitHub</a> · <a href="about.html">Créditos</a> · UCR</p>
-</footer>
-</body>
+        <p class="nombre-sitio">WAR BATTLE.IO</p>
+
+        <nav class="navegacion">
+            <ul class="lista-navegacion">
+                <li class="elemento-navegacion">
+                    <a href="index.html" class="enlace-navegacion">Inicio</a>
+                </li>
+                <li class="elemento-navegacion">
+                    <a href="faqs.html" class="enlace-navegacion">Reglas</a>
+                </li>
+                <li class="elemento-navegacion">
+                    <a href="about.html" class="enlace-navegacion">About</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="lobby">
+        <header class="encabezado-lobby">
+            <h1 class="codigo-lobby">Sala:AURA-7F2K</h1>
+            <p>Comparte este código para invitar jugadores</p>
+        </header>
+
+        <section class="jugadores-lobby">
+            <h2 class="titulo-jugadores-lobby">Jugadores conectados</h2>
+            <ul class="lista-jugadores-lobby">
+                <li class="jugador-lobby">
+                    <p><strong>Jugador_01</strong></p>
+                    <p><strong>Listo</strong></p>
+                </li>
+                <li class="jugador-lobby">
+                    <p><strong>Jugador_02</strong></p>
+                    <p><strong>Esperando</strong></p>
+                </li>
+                <li class="jugador-lobby">
+                    <p><strong>Jugador_03</strong></p>
+                    <p><strong>Listo</strong></p>
+                </li>
+                <li class="jugador-lobby">
+                    <p><strong>Jugador_04</strong></p>
+                    <p><strong>Esperando</strong></p>
+                </li>
+            </ul>
+        </section>
+
+        <p>La partida inicia automáticamente al llenarse la sala o tras 60s</p>
+
+        <div class="botones-lobby">
+            <button type="button" class="lobby-boton-listo" >Listo</button>
+            <button type="button" class="lobby-boton-salir">Salir</button>
+        </div>
+    </main>
+
+    <footer class="pie-pagina">
+        <p class="copyright">&copy; 2026 Aura Farmers</p>
+
+        <p class="enlaces-pie">
+            <a href="https://github.com/JoMoSa27/proyecto-B70134-C39321-C4H757-C4I578"
+                class="enlace-pie">GitHub</a>
+            ·
+            <a href="about.html" class="enlace-pie">Créditos</a>
+            · UCR
+         </p>
+    </footer>
+  </body>
 </html>
