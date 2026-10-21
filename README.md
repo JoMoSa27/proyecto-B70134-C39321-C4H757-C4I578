@@ -133,7 +133,7 @@ El resultado depende por tanto de la puntería, la elección de ruta, el conocim
 | Josué Morera | Cliente | Lógica del juego del lado del cliente, modelo de estado e interacción en el tablero. |
 | Jean Aguilar | Diseño | Wireframes e identidad visual, documentación (`design.md`, `README.md`), y verificación de que las reglas funcionen y de que nada se rompa entre entregas. |
 | Adrián Rodríguez | Frontend | Estructura semántica del HTML, diseño responsive y cumplimiento de validadores y linters. Lidera las entregas de HTML y CSS. |
-| Jordan Obando Brenes| |
+| Jordan Obando Brenes | Frontend | Maquetación de la pantalla de resultados. |
 
 ## 5. Tecnologías previstas
 
@@ -154,3 +154,13 @@ En fase de propuesta. Pendiente de aprobación de la Entrega 1.
 ## 7. Originalidad
 
 El proyecto parte del género *battle royale* en dos dimensiones e introduce las adaptaciones descritas en las reglas 6, 7 y 8. Todo el arte, mapa, armas, interfaz y nomenclatura son originales. No se reutilizará código fuente de implementaciones existentes del género.
+
+---
+
+## 8. Sitio publicado
+
+A partir de la Entrega 2, cada entrega se revisa sobre la versión publicada en GitHub Pages.
+
+- **URL:** https://jomosa27.github.io/proyecto-B70134-C39321-C4H757-C4I578/
+
+Ver [`CONTRIBUTING.md`](./CONTRIBUTING.md) para las convenciones de maquetado de esta entrega.

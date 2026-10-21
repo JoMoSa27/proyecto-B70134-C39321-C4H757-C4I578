@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Inicio — WAR BATTLE.IO</title>
+        <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+    </head>
+    <body class="pagina-inicio">
+        <header class="encabezado">
+            <a href="index.html" class="enlace-logo">
+                <img src="favicon.svg"
+                     alt="Logo de WAR BATTLE.IO"
+                     width="40"
+                     height="40"
+                     class="logo"/>
+            </a>
+
+            <p class="nombre-sitio">WAR BATTLE.IO</p>
+
+            <nav class="navegacion">
+                <ul class="lista-navegacion">
+                    <li class="elemento-navegacion">
+                        <a href="index.html" class="enlace-navegacion">Inicio</a>
+                    </li>
+                    <li class="elemento-navegacion">
+                        <a href="faqs.html" class="enlace-navegacion">Reglas</a>
+                    </li>
+                    <li class="elemento-navegacion">
+                        <a href="about.html" class="enlace-navegacion">About</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="contenido-principal">
+            <h1 class="titulo-principal">WAR BATTLE.IO</h1>
+
+            <div class="contenedor-imagen">
+                <img src="assets/hongoArmado.png" alt="War Battle.io Logo" class="imagen-juego"/>
+            </div>
+
+            <form action="lobby.html" method="get" class="formulario-inicio">
+                <label for="nombre-usuario" class="etiqueta-nickname"> Nickname </label>
+
+                <input type="text"
+                       id="nombre-usuario"
+                       class="barra-nombre"
+                       name="nombre-usuario"
+                       placeholder="Ingresa tu nickname..."
+                       required="required"
+                       maxlength="10"/>
+
+                <button type="submit" class="boton-jugar"> Jugar </button>
+            </form>
+        </main>
+
+        <footer class="pie-pagina">
+            <p class="copyright">&#169; 2026 Aura Farmers</p>
+
+            <p class="enlaces-pie">
+                <a href="https://github.com/JoMoSa27/proyecto-B70134-C39321-C4H757-C4I578"
+                   class="enlace-pie">GitHub</a>
+                ·
+                <a href="about.html" class="enlace-pie">Créditos</a>
+                · UCR
+            </p>
+        </footer>
+    </body>
+</html>
