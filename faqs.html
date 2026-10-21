@@ -23,8 +23,80 @@
 
     <main>
         <h1>Reglas del juego</h1>
-        <!-- TODO equipo: controles primero, luego cada regla (README.md tiene el texto de las 8 reglas) en un <details>/<summary> por regla — es el acordeón nativo de HTML, no hace falta JS (ver design/wireframes/04-faqs-reglas.png). -->
-        <p>Contenido pendiente — Controles y Reglas 1 a 8.</p>
+
+        <section>
+            <h2>Controles</h2>
+            <ul>
+                <li><kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd>: moverse</li>
+                <li>Mouse: apuntar</li>
+                <li>Click: disparar</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Reglas básicas</h2>
+
+            <details>
+                <summary>Regla 1: Movimiento continuo</summary>
+                <p>Mientras mantengas pulsada una tecla de dirección (W, A, S, D), tu personaje se mueve en esa
+                    dirección a velocidad constante. No se pueden atravesar obstáculos ni los límites del mapa: si
+                    chocas con algo, te detienes en el punto de contacto.</p>
+            </details>
+
+            <details>
+                <summary>Regla 2: Apuntado y disparo</summary>
+                <p>Apuntas con el mouse y disparas con el click principal. El disparo requiere munición disponible
+                    y respetar la cadencia del arma. El proyectil sale desde tu posición hacia donde apuntaste y
+                    avanza hasta impactar o llegar a su alcance máximo.</p>
+            </details>
+
+            <details>
+                <summary>Regla 3: Impacto y eliminación</summary>
+                <p>Si un proyectil golpea a otro jugador, le resta el daño del arma. Si golpea un obstáculo,
+                    desaparece sin hacer daño. Cuando la vida de un jugador llega a 0 queda eliminado y pasa a modo
+                    espectador.</p>
+            </details>
+
+            <details>
+                <summary>Regla 4: Reducción de la zona segura</summary>
+                <p>Cada 90 segundos la zona segura se reduce y su centro se mueve a otra posición. Si estás fuera
+                    de la zona pierdes vida de forma continua: 2, 4, 7 y 12 puntos por segundo en las fases 1 a 4.
+                    El daño de zona también puede eliminarte.</p>
+            </details>
+
+            <details>
+                <summary>Regla 5: Condición de fin</summary>
+                <p>La partida termina cuando queda un solo jugador con vida, que es el ganador. Si los dos últimos
+                    jugadores son eliminados al mismo tiempo, es empate. Al final se muestra la tabla de posiciones
+                    con el puesto, las eliminaciones y el tiempo de supervivencia de cada jugador.</p>
+            </details>
+        </section>
+
+        <section>
+            <h2>Reglas de identidad propia</h2>
+            <p>Estas reglas son la adaptación del equipo al género: buscan que el resultado dependa de tus
+                decisiones y tu habilidad, no de la suerte.</p>
+
+            <details>
+                <summary>Regla 6: Armerías fijas</summary>
+                <p>Todos empiezan con la misma arma básica. Las demás armas solo se consiguen en las 6 armerías del
+                    mapa, que siempre están en el mismo lugar y se ven en el minimapa. Al pararte sobre una armería
+                    disponible recoges su arma automáticamente; después queda inactiva por 45 segundos.</p>
+            </details>
+
+            <details>
+                <summary>Regla 7: Marca del cazador</summary>
+                <p>El jugador con más eliminaciones recibe la marca del cazador y su posición se muestra en el
+                    minimapa de todos los demás. La marca pasa a otro jugador en cuanto alguien iguale o supere sus
+                    eliminaciones.</p>
+            </details>
+
+            <details>
+                <summary>Regla 8: Zona anunciada</summary>
+                <p>El centro y el radio de la siguiente zona aparecen en el minimapa 20 segundos antes de que
+                    empiece a cerrarse, para que puedas decidir con tiempo hacia dónde moverte.</p>
+            </details>
+        </section>
     </main>
 
     <footer>
