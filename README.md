@@ -161,6 +161,6 @@ El proyecto parte del género *battle royale* en dos dimensiones e introduce las
 
 A partir de la Entrega 2, cada entrega se revisa sobre la versión publicada en GitHub Pages.
 
-- **URL:** *pendiente — agregar el enlace una vez publicado el sitio.*
+- **URL:** https://jomosa27.github.io/proyecto-B70134-C39321-C4H757-C4I578/
 
 Ver [`CONTRIBUTING.md`](./CONTRIBUTING.md) para las convenciones de maquetado de esta entrega.
