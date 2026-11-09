@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Lobby — WAR BATTLE.IO</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml"/>
+
+    <link rel = "stylesheet" href="css/tokens.css"/>
+    <link rel = "stylesheet" href = "css/lobby.css"/>
   </head>
 
-  <body>
+  <body class="pagina-lobby">
     <header class="encabezado">
         <a href="index.html" class="enlace-logo">
             <img src="assets/favicon.svg"
@@ -44,31 +47,29 @@
             <h2 class="titulo-jugadores-lobby">Jugadores conectados</h2>
             <ul class="lista-jugadores-lobby">
                 <li class="jugador-lobby">
-                    <p><strong>Jugador_01</strong></p>
+                    <h2><strong>Jugador_01</strong></h2>
                     <p><strong>Listo</strong></p>
                 </li>
                 <li class="jugador-lobby">
-                    <p><strong>Jugador_02</strong></p>
+                    <h2><strong>Jugador_02</strong></h2>
                     <p><strong>Esperando</strong></p>
                 </li>
                 <li class="jugador-lobby">
-                    <p><strong>Jugador_03</strong></p>
+                    <h2><strong>Jugador_03</strong></h2>
                     <p><strong>Listo</strong></p>
                 </li>
                 <li class="jugador-lobby">
-                    <p><strong>Jugador_04</strong></p>
+                    <h2><strong>Jugador_04</strong></h2>
                     <p><strong>Esperando</strong></p>
                 </li>
             </ul>
         </section>
 
-        <p>La partida inicia automáticamente al llenarse la sala o tras 60s</p>
+        <p class="timer">La partida inicia automáticamente al llenarse la sala o tras 60s</p>
 
         <nav class="botones-lobby">
-            <ul>
-                <li><a href="juego.html" class="lobby-boton-listo">Listo</a></li>
-                <li><a href="index.html" class="lobby-boton-salir">Salir</a></li>
-            </ul>
+                <a href="juego.html" class="lobby-boton-listo">Listo</a></li>
+                <a href="index.html" class="lobby-boton-salir">Salir</a></li>        
         </nav>
     </main>
 
