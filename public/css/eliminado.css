@@ -1,0 +1,210 @@
+/* Estilos de la pantalla de jugador eliminado (eliminado.html) */
+
+/* Colores derivados de la paleta, usados solo en esta página */
+.pagina-eliminado {
+    --panel: rgb(20 26 12 / 90%);
+    --texto-suave: rgb(232 228 208 / 80%);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body.pagina-eliminado {
+    margin: 0;
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.5;
+    background: var(--DarkBackGround);
+}
+
+/* El tablero, la zona y la tarjeta se apilan en la misma celda */
+.pantalla-eliminado {
+    min-height: 100vh;
+    display: grid;
+    overflow: hidden;
+}
+
+.espectador,
+.tarjeta-eliminado,
+.pantalla-eliminado::before {
+    grid-area: 1 / 1;
+}
+
+/* Tablero de fondo con la partida en curso */
+.espectador {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 16px;
+}
+
+.tablero {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, var(--Background), var(--DarkBackGround) 75%);
+    filter: grayscale(60%) brightness(0.7);
+}
+
+.espectador h1,
+.observando {
+    z-index: 1;
+    margin: 0;
+    padding: 8px 16px;
+    background: var(--panel);
+    border: 2px solid var(--accents);
+    border-radius: var(--radio);
+}
+
+.espectador h1 {
+    color: var(--text);
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+}
+
+.observando {
+    font-family: var(--font-hud);
+}
+
+/* Círculo punteado que representa la zona cerrándose */
+.pantalla-eliminado::before {
+    content: "";
+    place-self: center;
+    width: min(80vmin, 640px);
+    aspect-ratio: 1;
+    border: 2px dashed var(--orange);
+    z-index: 1;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: zona 4s var(--ease) infinite alternate;
+}
+
+@keyframes zona {
+    from {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    to {
+        transform: scale(0.9);
+        opacity: 0.4;
+    }
+}
+
+/* Tarjeta central con el resultado */
+.tarjeta-eliminado {
+    z-index: 2;
+    place-self: center;
+    width: min(100% - 32px, 520px);
+    padding: clamp(20px, 5vw, 36px);
+    text-align: center;
+    background: var(--panel);
+    border: var(--borde) solid var(--red);
+    border-radius: var(--radio-lg);
+    box-shadow: var(--sombra-3);
+    animation: entrada 400ms var(--ease);
+}
+
+@keyframes entrada {
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.tarjeta-eliminado h2 {
+    margin: 0 0 16px;
+    color: var(--text);
+    font-size: clamp(1.4rem, 5vw, 2.2rem);
+}
+
+.dato {
+    margin: 0;
+    font-family: var(--font-hud);
+    font-size: 1.1rem;
+}
+
+.aviso {
+    margin: 8px 0 20px;
+    color: var(--texto-suave);
+}
+
+.accion {
+    margin: 10px 0 0;
+}
+
+/* Enlaces con forma de botón */
+.boton {
+    display: inline-block;
+    min-width: 220px;
+    padding: 12px 20px;
+    color: var(--text);
+    font-family: var(--font-hud);
+    text-decoration: none;
+    border: 2px solid var(--accents);
+    border-radius: var(--radio);
+    transition:
+        transform var(--dur) var(--ease),
+        background-color var(--dur) var(--ease),
+        color var(--dur) var(--ease);
+}
+
+.boton:hover {
+    color: var(--DarkBackGround);
+    background: var(--accents);
+    transform: translateY(-2px);
+}
+
+.boton-principal {
+    color: var(--DarkBackGround);
+    font-family: var(--font-title);
+    background: var(--orange);
+    border-color: var(--orange);
+}
+
+.boton-principal:hover {
+    background: var(--text);
+    border-color: var(--text);
+}
+
+.boton-salir {
+    border-color: var(--red);
+}
+
+.boton-salir:hover {
+    color: var(--text);
+    background: var(--red);
+}
+
+/* Foco visible para navegar con teclado */
+.boton:focus-visible {
+    outline: 3px solid var(--text);
+    outline-offset: 3px;
+}
+
+/* Pantallas pequeñas */
+@media (width <= 600px) {
+    .boton {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+/* Sin animaciones si el usuario lo pide */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
