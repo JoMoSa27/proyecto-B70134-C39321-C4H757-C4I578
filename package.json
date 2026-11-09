@@ -3,7 +3,7 @@
   "private": true,
   "description": "WAR BATTLE.IO - CI-0137",
   "scripts": {
-    "lint:css": "stylelint \"public/css/*.css\""
+    "lint:css": "stylelint \"docs/css/*.css\""
   },
   "devDependencies": {
     "stylelint": "^16.0.0",
