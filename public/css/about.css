@@ -1,0 +1,304 @@
+/* Estilos para la página about.html (About / Créditos) */
+
+.pagina-about {
+  --panel: rgb(20 26 12 / 88%);
+  --linea: rgb(156 175 136 / 45%);
+  --texto-suave: rgb(232 228 208 / 80%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body.pagina-about {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgb(156 175 136 / 16%), transparent 50%),
+    linear-gradient(160deg, var(--Background), var(--DarkBackGround));
+}
+
+/* Encabezado y navegación (mismo patrón que index y faqs) */
+.encabezado {
+  padding: 14px clamp(16px, 5vw, 72px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  background: var(--panel);
+  border-bottom: 2px solid var(--linea);
+  box-shadow: var(--sombra-1);
+}
+
+.enlace-logo {
+  display: inline-flex;
+  border-radius: var(--radio);
+}
+
+.logo {
+  display: block;
+  width: 46px;
+  height: 46px;
+  transition: transform var(--dur) var(--ease), filter var(--dur) var(--ease);
+}
+
+.enlace-logo:hover .logo,
+.enlace-logo:focus-visible .logo {
+  transform: rotate(-8deg) scale(1.08);
+  filter: drop-shadow(0 0 6px var(--orange));
+}
+
+.nombre-sitio {
+  margin: 0 auto 0 0;
+  font-family: var(--font-title);
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  letter-spacing: 0.06em;
+}
+
+.lista-navegacion {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(4px, 2vw, 22px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lista-navegacion a {
+  display: inline-block;
+  padding: 9px 14px;
+  color: var(--text);
+  font-family: var(--font-hud);
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: var(--radio);
+  transition: color var(--dur) var(--ease),
+    background-color var(--dur) var(--ease);
+}
+
+.lista-navegacion a:hover {
+  color: var(--DarkBackGround);
+  background: var(--accents);
+}
+
+/* La página actual se distingue con subrayado y borde, no solo con color */
+.lista-navegacion a[aria-current="page"] {
+  border-color: var(--orange);
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+/* Foco visible para navegar con teclado */
+a:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+}
+
+/* Contenido principal */
+.contenido-principal {
+  width: min(100% - 32px, 1080px);
+  flex: 1;
+  margin: 0 auto;
+  padding: clamp(28px, 5vw, 56px) 0;
+  display: grid;
+  gap: 24px;
+}
+
+.contenido-principal h1 {
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  line-height: 1.1;
+  text-shadow: 3px 4px 0 rgb(20 26 12 / 65%);
+  animation: entrada 500ms var(--ease) both;
+}
+
+.subtitulo {
+  margin: -12px 0 0;
+  color: var(--texto-suave);
+  font-family: var(--font-hud);
+}
+
+/* Paneles: Equipo, Créditos y Repositorio */
+.panel {
+  padding: clamp(18px, 4vw, 32px);
+  background: var(--panel);
+  border: var(--borde) solid var(--linea);
+  border-left: 8px solid var(--orange);
+  border-radius: var(--radio-lg);
+  box-shadow: var(--sombra-2);
+  animation: entrada 500ms var(--ease) both;
+}
+
+.panel:nth-of-type(2) {
+  animation-delay: 80ms;
+}
+
+.panel:nth-of-type(3) {
+  animation-delay: 160ms;
+}
+
+.panel h2 {
+  margin: 0 0 18px;
+  font-size: clamp(1.2rem, 3vw, 1.7rem);
+}
+
+.panel p {
+  margin: 0 0 8px;
+}
+
+.panel a {
+  color: var(--accents);
+  text-underline-offset: 3px;
+  transition: color var(--dur) var(--ease);
+}
+
+.panel a:hover {
+  color: var(--orange);
+}
+
+@keyframes entrada {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tarjetas de integrantes: 1 columna en móvil, más en pantallas grandes */
+.equipo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.integrante {
+  padding: 18px;
+  background: var(--DarkBackGround);
+  border: 2px solid var(--linea);
+  border-radius: var(--radio);
+  transition: transform var(--dur) var(--ease),
+    border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+
+.integrante:hover,
+.integrante:focus-within {
+  transform: translateY(-4px);
+  border-color: var(--orange);
+  box-shadow: var(--sombra-2);
+}
+
+.integrante h3 {
+  margin: 12px 0 6px;
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  letter-spacing: 0.04em;
+}
+
+.integrante p {
+  color: var(--texto-suave);
+  font-size: 0.95rem;
+}
+
+.integrante p:last-child {
+  font-family: var(--font-hud);
+}
+
+/* Avatar circular con las iniciales (decorativo) */
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  color: var(--DarkBackGround);
+  font-family: var(--font-title);
+  font-size: 1.3rem;
+  background: var(--accents);
+  border: 3px solid var(--text);
+  border-radius: 50%;
+}
+
+.integrante:hover .avatar {
+  background: var(--orange);
+}
+
+/* Lista de créditos con viñeta de punto de mira */
+.creditos {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.creditos li {
+  padding-left: 28px;
+  position: relative;
+}
+
+.creditos li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0.45em;
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--orange);
+  border-radius: 50%;
+}
+
+.creditos code {
+  padding: 1px 6px;
+  font-family: var(--font-hud);
+  background: var(--DarkBackGround);
+  border-radius: 6px;
+}
+
+/* Pie de página */
+.pie-pagina {
+  padding: 16px clamp(16px, 5vw, 72px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 20px;
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+  background: var(--DarkBackGround);
+  border-top: 1px solid var(--linea);
+}
+
+.pie-pagina p {
+  margin: 0;
+}
+
+.pie-pagina a {
+  color: var(--accents);
+}
+
+.pie-pagina a:hover {
+  color: var(--orange);
+}
+
+/* Sin animaciones si el usuario lo prefiere */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-delay: 0s !important;
+    animation-iteration-count: 1 !important;
+  }
+}

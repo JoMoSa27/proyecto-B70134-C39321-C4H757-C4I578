@@ -172,7 +172,7 @@ kbd {
   transform: translateX(4px);
 }
 
-/* Abierta: acá cambia el color y el grosor del borde */
+/* Regla abierta: cambia el color y el grosor del borde */
 .regla[open] {
   border-color: var(--orange);
   border-left-width: 6px;

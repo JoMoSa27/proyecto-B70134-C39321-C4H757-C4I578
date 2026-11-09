@@ -1,56 +1,56 @@
 @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Barlow:wght@400;600&family=Share+Tech+Mono&display=swap');
 
 :root {
-  /* --- Paleta de colores ------------------------------------------------ */
-  --Background: 		#4A5D23; /*color principal, fondo normal*/
-  --DarkBackGround: #141A0C; /*Color mas oscuro para fondos*/
-  --accents: 				#9CAF88; /*Color claro para bordes u otros acentos*/
+  /* Paleta de colores */
+  --Background: #4A5D23; /* fondo principal */
+  --DarkBackGround: #141A0C; /* fondo oscuro */
+  --accents: #9CAF88; /* bordes y acentos */
 
-  --text: 					#E8E4D0; /*principal para textos*/
-  --OtherText: 			#5C5F55; /*para otros textos en donde el text normal no sirva*/
+  --text: #E8E4D0; /* texto principal */
+  --OtherText: #5C5F55; /* texto secundario */
 
-  --orange: 				#E8751A; /*para otros acentos como botones importantes principales*/
-  --red: 						#B3261E; /*rojos para acciones o botones*/
+  --orange: #E8751A; /* botones principales */
+  --red: #B3261E; /* acciones peligrosas y eliminación */
 
-  /* --- Medidas repetidas ------------------------------------------------- */
+  /* Medidas repetidas */
   --radio:          10px;     /* esquinas de tarjetas y paneles */
   --radio-pastilla: 999px;    /* esquinas de las pastillas: siempre redondas */
   --borde:          3px;      /* grosor del borde de tarjetas */
 
-  /* --- Tipografía -------------------------------------------------------*/
+  /* Tipografía */
   --font-title: 'Black Ops One', system-ui, sans-serif;
   --font-body: 'Barlow', system-ui, sans-serif;
   --font-hud: 'Share Tech Mono', ui-monospace, monospace;
 
-  /* --- Radios más generosos ---------------------------------------------- */
+  /* Radios grandes */
   --radio-lg:       24px;
   --radio-xl:       30px;
 
-  /* --- Sombras: siempre en capas (una cercana + una lejana y difusa) ----- */
-  --sombra-1:  0 1px 2px rgba(20, 44, 82, .12),
-               0 8px 16px -8px rgba(20, 44, 82, .45);
-  --sombra-2:  0 2px 4px rgba(20, 44, 82, .10),
-               0 18px 34px -14px rgba(20, 44, 82, .55);
-  --sombra-3:  0 4px 8px rgba(10, 24, 48, .15),
-               0 34px 70px -20px rgba(10, 24, 48, .75);
+  /* Sombras en dos capas: una cercana y otra lejana */
+  --sombra-1:  0 1px 2px rgba(20, 26, 12, .25),
+               0 8px 16px -8px rgba(20, 26, 12, .55);
+  --sombra-2:  0 2px 4px rgba(20, 26, 12, .25),
+               0 18px 34px -14px rgba(20, 26, 12, .6);
+  --sombra-3:  0 4px 8px rgba(10, 14, 6, .3),
+               0 34px 70px -20px rgba(10, 14, 6, .8);
   --brillo:    inset 0 2px 0 rgba(255, 255, 255, .7);   /* filo de luz arriba */
 
-  /* --- Movimiento -------------------------------------------------------- */
+  /* Movimiento */
   --ease:      cubic-bezier(.2, .8, .2, 1);   /* arranca rápido, frena suave */
   --dur:       220ms;
 }
 
-/*-- Title format -----------------------------------------------------------*/
+/* Formato de títulos */
 h1, h2 { 
 	font-family: var(--font-title); 
 	letter-spacing: 0.05em; 
-	text-transform: uppercase; color: var(--bone);
+	text-transform: uppercase; color: var(--text);
 }
 
-/*-- Text format ------------------------------------------------------------*/
+/* Formato del texto base */
 body { 
 	font-family: var(--font-body); 
-	color: var(--bone); 
-	background: var(--bg); 
+	color: var(--text); 
+	background: var(--DarkBackGround); 
 	line-height: 1.5; 
 }
