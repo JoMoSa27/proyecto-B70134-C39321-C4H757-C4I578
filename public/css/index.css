@@ -1,0 +1,302 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+body.pagina-inicio {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.5;
+    background:
+        radial-gradient(ellipse at 50% 38%, rgba(156, 175, 136, .16), transparent 48%),
+        linear-gradient(145deg, #35451b 0%, var(--Background) 48%, #263515 100%);
+}
+
+/* Encabezado y navegación */
+.encabezado {
+    width: 100%;
+    min-height: 82px;
+    padding: 14px clamp(20px, 5vw, 72px);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: rgba(20, 26, 12, .94);
+    border-bottom: 2px solid rgba(156, 175, 136, .45);
+    box-shadow: var(--sombra-1);
+}
+
+.enlace-logo {
+    display: inline-flex;
+    align-items: center;
+    flex: 0 0 auto;
+}
+
+.logo {
+    display: block;
+    width: 46px;
+    height: 46px;
+    object-fit: contain;
+}
+
+.nombre-sitio {
+    margin: 0 auto 0 0;
+    color: var(--text);
+    font-family: var(--font-title);
+    font-size: clamp(1rem, 2vw, 1.35rem);
+    letter-spacing: .06em;
+}
+
+.lista-navegacion {
+    display: flex;
+    align-items: center;
+    gap: clamp(8px, 2vw, 26px);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.enlace-navegacion {
+    display: inline-block;
+    padding: 9px 14px;
+    color: var(--text);
+    font-family: var(--font-hud);
+    font-size: .95rem;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: var(--radio);
+    transition:
+        color var(--dur) var(--ease),
+        background-color var(--dur) var(--ease),
+        border-color var(--dur) var(--ease);
+}
+
+.enlace-navegacion:hover,
+.enlace-navegacion:focus-visible {
+    color: var(--DarkBackGround);
+    background: var(--accents);
+    border-color: var(--text);
+    outline: none;
+}
+
+/* Contenido principal */
+.contenido-principal {
+    width: min(100% - 36px, 1000px);
+    flex: 1;
+    margin: 0 auto;
+    padding: clamp(34px, 6vh, 68px) 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.titulo-principal {
+    margin: 0 0 18px;
+    color: var(--text);
+    font-family: var(--font-title);
+    font-size: clamp(2.2rem, 7vw, 5rem);
+    line-height: 1.12;
+    letter-spacing: .07em;
+    text-shadow: 3px 4px 0 rgba(20, 26, 12, .65);
+}
+
+.contenedor-imagen {
+    width: min(100%, 520px);
+    margin: 8px auto 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen-juego {
+    display: block;
+    width: 100%;
+    max-height: 340px;
+    object-fit: contain;
+    filter: drop-shadow(0 18px 18px rgba(15, 20, 8, .5));
+}
+
+/* Formulario para iniciar partida */
+.formulario-inicio {
+    width: min(100%, 390px);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 24px;
+    background: rgba(20, 26, 12, .88);
+    border: var(--borde) solid var(--accents);
+    border-radius: var(--radio-lg, 24px);
+    box-shadow: var(--sombra-2);
+}
+
+.etiqueta-nickname {
+    color: var(--text);
+    font-family: var(--font-hud);
+    font-size: 1.1rem;
+    text-align: left;
+    letter-spacing: .04em;
+}
+
+.barra-nombre {
+    width: 100%;
+    min-height: 48px;
+    padding: 11px 14px;
+    color: var(--text);
+    font: 1rem var(--font-body);
+    background: #222c16;
+    border: 2px solid var(--accents);
+    border-radius: var(--radio);
+    outline: none;
+    transition:
+        border-color var(--dur) var(--ease),
+        box-shadow var(--dur) var(--ease);
+}
+
+.barra-nombre::placeholder {
+    color: rgba(232, 228, 208, .58);
+}
+
+.barra-nombre:focus {
+    border-color: var(--orange);
+    box-shadow: 0 0 0 3px rgba(232, 117, 26, .2);
+}
+
+.boton-jugar {
+    min-height: 52px;
+    margin-top: 6px;
+    padding: 12px 20px;
+    color: var(--DarkBackGround);
+    font-family: var(--font-title);
+    font-size: 1.15rem;
+    letter-spacing: .06em;
+    background: var(--orange);
+    border: 2px solid #ffad63;
+    border-radius: var(--radio);
+    box-shadow: 0 5px 0 #9b4811, var(--sombra-1);
+    cursor: pointer;
+    transition:
+        transform var(--dur) var(--ease),
+        background-color var(--dur) var(--ease),
+        box-shadow var(--dur) var(--ease);
+}
+
+.boton-jugar:hover {
+    background: #ff9140;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 0 #9b4811, var(--sombra-2);
+}
+
+.boton-jugar:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 #9b4811;
+}
+
+.boton-jugar:focus-visible {
+    outline: 3px solid var(--text);
+    outline-offset: 4px;
+}
+
+/* Pie de página */
+.pie-pagina {
+    width: 100%;
+    padding: 16px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px 20px;
+    color: rgba(232, 228, 208, .75);
+    background: var(--DarkBackGround);
+    border-top: 1px solid rgba(156, 175, 136, .4);
+    font-size: .9rem;
+}
+
+.copyright,
+.enlaces-pie {
+    margin: 0;
+}
+
+.enlace-pie {
+    color: var(--accents);
+    text-decoration: none;
+    transition: color var(--dur) var(--ease);
+}
+
+.enlace-pie:hover,
+.enlace-pie:focus-visible {
+    color: var(--orange);
+    text-decoration: underline;
+}
+
+/* Adaptación a pantallas pequeñas */
+@media (max-width: 600px) {
+    .encabezado {
+        padding: 12px 16px;
+        flex-wrap: wrap;
+        gap: 8px 12px;
+    }
+
+    .logo {
+        width: 38px;
+        height: 38px;
+    }
+
+    .nombre-sitio {
+        font-size: 1rem;
+    }
+
+    .navegacion {
+        width: 100%;
+    }
+
+    .lista-navegacion {
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .enlace-navegacion {
+        padding: 7px 11px;
+        font-size: .85rem;
+    }
+
+    .contenido-principal {
+        padding: 34px 0;
+    }
+
+    .contenedor-imagen {
+        margin-bottom: 20px;
+    }
+
+    .imagen-juego {
+        max-height: 260px;
+    }
+
+    .formulario-inicio {
+        padding: 20px;
+    }
+
+    .pie-pagina {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
