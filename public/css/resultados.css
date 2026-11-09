@@ -1,0 +1,17 @@
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display:flex;
+    flex-direction: column;
+    background: repeating-linear-gradient(0deg, rgba(0,0,0,.18) 0 1px, transparent 1px, 3px),
+    repeating-linear-gradient(45deg, rgba(154, 175, 136, .035) 0 2px, transparent 2px 60px),
+    repeating-linear-gradient(-45deg, rgba(156, 175, 136, .035) 0 2px, transparent 2px 60px),
+    radial-gradient(ellipse at 50% 35%, #1d2813 0%, var(--DarkBackGround) 70%);
+    color: var(--text);
+}
