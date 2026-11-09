@@ -1,0 +1,141 @@
+/* Estilos para la página faqs.html */
+
+.pagina-faqs {
+  --panel: rgb(20 26 12 / 88%);
+  --linea: rgb(156 175 136 / 45%);
+  --texto-suave: rgb(232 228 208 / 80%);
+}
+
+body.pagina-faqs {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  background: linear-gradient(160deg, var(--background), var(--dark-background));
+}
+
+/* Contenido principal */
+.contenido-faqs {
+  width: min(100% - 32px, 900px);
+  flex: 1;
+  margin: 0 auto;
+  padding: clamp(28px, 6vh, 56px) 0;
+}
+
+.contenido-faqs h1 {
+  margin: 0 0 24px;
+  color: var(--text);
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  text-shadow: 3px 3px 0 var(--dark-background);
+}
+
+.contenido-faqs h2 {
+  margin: 32px 0 14px;
+  color: var(--text);
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+}
+
+.controles {
+  padding: 18px 22px;
+  background: var(--panel);
+  border: var(--borde) solid var(--accents);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra-2);
+}
+
+.controles h2 {
+  margin-top: 0;
+}
+
+.lista-controles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 28px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-hud);
+}
+
+kbd {
+  display: inline-block;
+  min-width: 1.8em;
+  padding: 2px 6px;
+  color: var(--dark-background);
+  font-family: var(--font-hud);
+  text-align: center;
+  background: var(--text);
+  border-radius: 6px;
+  box-shadow: 0 3px 0 var(--accents);
+}
+
+.intro-reglas {
+  margin: 0 0 14px;
+  color: var(--texto-suave);
+}
+
+.regla {
+  margin-bottom: 12px;
+  background: var(--panel);
+  border: 2px solid var(--linea);
+  border-radius: var(--radio);
+  transition: border-color var(--dur) var(--ease),
+    transform var(--dur) var(--ease);
+}
+
+.regla:hover {
+  border-color: var(--accents);
+  transform: translateX(4px);
+}
+
+/* Regla abierta: cambia el color y el grosor del borde */
+.regla[open] {
+  border-color: var(--orange);
+  border-left-width: 6px;
+}
+
+.regla summary {
+  padding: 14px 18px;
+  font-weight: 600;
+  border-radius: var(--radio);
+  cursor: pointer;
+}
+
+.regla summary::marker {
+  color: var(--orange);
+}
+
+.regla p {
+  margin: 0;
+  padding: 0 18px 16px;
+  color: var(--texto-suave);
+}
+
+.regla[open] p {
+  animation: aparecer var(--dur) var(--ease);
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Pantallas pequeñas */
+@media (width <= 600px) {
+  .lista-controles {
+    flex-direction: column;
+  }
+
+}
+
+/* Sin animaciones si el usuario lo prefiere */

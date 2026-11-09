@@ -1,0 +1,265 @@
+/* Estilos para la página juego.html (maqueta del tablero, sin JavaScript todavía) */
+
+.pagina-juego {
+  --panel: rgb(20 26 12 / 88%);
+  --linea: rgb(156 175 136 / 45%);
+  --texto-suave: rgb(232 228 208 / 80%);
+}
+
+body.pagina-juego {
+  margin: 0;
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  background: var(--dark-background);
+}
+
+/* El tablero ocupa toda la pantalla y el HUD se coloca encima */
+.pantalla-juego {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto 1fr auto auto;
+  gap: 12px;
+  padding: 16px;
+  overflow: hidden;
+}
+
+/* Tablero simulado con una cuadrícula mientras el canvas está vacío */
+.tablero {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    repeating-linear-gradient(0deg, transparent 0 59px, rgb(156 175 136 / 18%) 59px 60px),
+    repeating-linear-gradient(90deg, transparent 0 59px, rgb(156 175 136 / 18%) 59px 60px),
+    radial-gradient(circle at 50% 50%, var(--background), var(--dark-background) 80%);
+}
+
+/* Jugador simulado en el centro del tablero */
+.pantalla-juego::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 28px;
+  height: 28px;
+  margin: -14px 0 0 -14px;
+  background: var(--text);
+  border: 4px solid var(--orange);
+  border-radius: 50%;
+  animation: pulso 1.6s var(--ease) infinite alternate;
+}
+
+@keyframes pulso {
+  to {
+    box-shadow: 0 0 0 14px rgb(232 117 26 / 0%), 0 0 18px var(--orange);
+  }
+}
+
+.titulo-partida {
+  position: relative;
+  z-index: 1;
+  grid-column: 1;
+  grid-row: 1;
+  place-self: start;
+  margin: 0;
+  padding: 6px 14px;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  background: var(--panel);
+  border: 2px solid var(--linea);
+  border-radius: var(--radio);
+}
+
+/* Foco visible para navegar con teclado */
+
+/* Paneles del HUD */
+.hud {
+  position: relative;
+  z-index: 1;
+  padding: 10px 14px;
+  background: var(--panel);
+  border: 2px solid var(--linea);
+  border-radius: var(--radio);
+}
+
+.hud h2 {
+  margin: 0 0 6px;
+  font-size: 0.85rem;
+}
+
+.hud p,
+.hud ul {
+  margin: 0;
+  font-family: var(--font-hud);
+  font-size: 0.95rem;
+}
+
+.hud ul {
+  padding: 0;
+  list-style: none;
+}
+
+/* Zona, tiempo y jugadores vivos arriba a la derecha */
+.zona {
+  grid-column: 3;
+  grid-row: 1 / 3;
+  align-self: start;
+  border-color: var(--orange);
+}
+
+.minimapa {
+  display: block;
+  width: 160px;
+  height: 160px;
+  margin-bottom: 8px;
+  background: var(--dark-background);
+  border: 2px solid var(--accents);
+  border-radius: var(--radio);
+}
+
+/* Eliminaciones recientes arriba a la izquierda, debajo del título */
+.eliminaciones {
+  grid-column: 1;
+  grid-row: 2;
+  place-self: start;
+}
+
+.eliminaciones li::before {
+  content: "\2715\00a0";
+  color: var(--orange);
+}
+
+/* Vida abajo a la izquierda, con barra y texto */
+.estado {
+  grid-column: 1;
+  grid-row: 3;
+  justify-self: start;
+  min-width: 220px;
+}
+
+.barra-vida {
+  width: 100%;
+  height: 14px;
+  margin-top: 6px;
+  accent-color: var(--orange);
+}
+
+/* Armas en fila abajo */
+.armas {
+  grid-column: 2;
+  grid-row: 3;
+  justify-self: center;
+}
+
+.armas ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.armas li {
+  padding: 4px 10px;
+  background: var(--dark-background);
+  border: 2px solid var(--linea);
+  border-radius: var(--radio);
+}
+
+.armas li:first-child {
+  border-color: var(--orange);
+}
+
+/* Controles táctiles abajo a la derecha */
+.controles-tactiles {
+  grid-column: 3;
+  grid-row: 3;
+  justify-self: end;
+}
+
+.controles-tactiles p + p {
+  margin-top: 8px;
+}
+
+.controles-tactiles button {
+  width: 100%;
+  min-height: 44px;
+  padding: 8px 16px;
+  color: var(--text);
+  font-family: var(--font-hud);
+  background: var(--dark-background);
+  border: 2px solid var(--accents);
+  border-radius: var(--radio);
+  cursor: pointer;
+  transition: background-color var(--dur) var(--ease),
+    color var(--dur) var(--ease);
+}
+
+.controles-tactiles button:hover {
+  color: var(--dark-background);
+  background: var(--accents);
+}
+
+/* Enlaces para simular el flujo de la partida */
+.salidas {
+  position: relative;
+  z-index: 1;
+  grid-column: 1 / 4;
+  grid-row: 4;
+}
+
+.salidas ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.salidas a {
+  display: inline-block;
+  padding: 8px 14px;
+  color: var(--text);
+  font-family: var(--font-hud);
+  font-size: 0.9rem;
+  text-decoration: none;
+  background: var(--panel);
+  border: 2px solid var(--linea);
+  border-radius: var(--radio);
+  transition: background-color var(--dur) var(--ease),
+    color var(--dur) var(--ease);
+}
+
+.salidas a:hover {
+  color: var(--dark-background);
+  background: var(--accents);
+}
+
+/* Pantallas pequeñas: el HUD se apila */
+@media (width <= 700px) {
+  .pantalla-juego {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+  }
+
+  .titulo-partida,
+  .eliminaciones,
+  .zona,
+  .estado,
+  .armas,
+  .controles-tactiles,
+  .salidas {
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: stretch;
+  }
+
+  .minimapa {
+    width: 120px;
+    height: 120px;
+  }
+}
+

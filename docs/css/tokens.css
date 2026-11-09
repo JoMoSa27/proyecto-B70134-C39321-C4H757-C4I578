@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Barlow:wght@400;600&family=Share+Tech+Mono&display=swap');
+
+:root {
+  /* Paleta de colores */
+  --background: #4A5D23; /* fondo principal */
+  --dark-background: #141A0C; /* fondo oscuro */
+  --accents: #9CAF88; /* bordes y acentos */
+  --text: #E8E4D0; /* texto principal */
+  --other-text: #5C5F55; /* texto secundario */
+  --orange: #E8751A; /* botones principales */
+  --red: #B3261E; /* acciones peligrosas y eliminación */
+  --scanline: rgb(0 0 0 / 18%);
+  --stripe: rgb(0 0 0 / 12%); /* rayas diagonales de la tabla */
+  --shade-inner: rgb(0 0 0 / 55%); /* sombra interior de la tabla */
+  --shade-drop: rgb(0 0 0 / 60%); /* sombra proyectada de la tabla */
+  --sheen: rgb(255 255 255 / 4%); /* brillo suave sobre paneles */
+  --accents-hover: rgb(156 175 136 / 7%); /* fila de tabla al pasar el mouse */
+  --lima: #A8C45A;
+  --brass: #B8A25C;
+  --lima-glow: rgb(168 196 90 / 35%);
+  --panel: #1A2312; 
+  --accents-line: rgb(156 175 136 / 30%);
+  --lima-fill: rgb(168 196 90 / 10%);
+  --accents-faint: rgb(156 175 136 / 3.5%);
+
+  /* --- Medidas repetidas ------------------------------------------------- */
+  --radio:          10px;     /* esquinas de tarjetas y paneles */
+  --radio-pastilla: 999px;    /* esquinas de las pastillas: siempre redondas */
+  --borde:          3px;      /* grosor del borde de tarjetas */
+
+  /* Tipografía */
+  --font-title: 'Black Ops One', system-ui, sans-serif;
+  --font-body: 'Barlow', system-ui, sans-serif;
+  --font-hud: 'Share Tech Mono', ui-monospace, monospace;
+
+  /* Radios grandes */
+  --radio-lg:       24px;
+  --radio-xl:       30px;
+
+  /* Sombras en dos capas: una cercana y otra lejana */
+  --sombra-1:  0 1px 2px rgb(20 26 12 / 25%),
+               0 8px 16px -8px rgb(20 26 12 / 55%);
+  --sombra-2:  0 2px 4px rgb(20 26 12 / 25%),
+               0 18px 34px -14px rgb(20 26 12 / 60%);
+  --sombra-3:  0 4px 8px rgb(10 14 6 / 30%),
+               0 34px 70px -20px rgb(10 14 6 / 80%);
+  --brillo:    inset 0 2px 0 rgb(255 255 255 / 70%);   /* filo de luz arriba */
+
+  /* Movimiento */
+  --ease:      cubic-bezier(.2, .8, .2, 1);   /* arranca rápido, frena suave */
+  --dur:       220ms;
+}
+
+/* Formato de títulos */
+h1, h2 { 
+	font-family: var(--font-title); 
+	letter-spacing: 0.05em; 
+	text-transform: uppercase; color: var(--text);
+}
+
+/* Formato del texto base */
+body { 
+	font-family: var(--font-body); 
+	color: var(--text); 
+	background: var(--dark-background); 
+	line-height: 1.5; 
+}
+
+/* Ajustes de texto y botones en pantallas pequeñas */
+@media (width <= 600px) {
+  h1 {
+    font-size: 2rem;
+    line-height: 1.1;
+    letter-spacing: 0.04em;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    line-height: 1.25;
+  }
+
+  button {
+    min-height: 44px;
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+  }
+}

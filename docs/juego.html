@@ -4,24 +4,28 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Partida — WAR BATTLE.IO</title>
-<link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="css/tokens.css"/>
+<link rel="stylesheet" href="css/common.css"/>
+<link rel="stylesheet" href="css/juego.css"/>
 </head>
-<body>
-<main>
+<body class="pagina-juego">
+<main class="pantalla-juego">
 
-<h1>Partida en curso</h1>
+<h1 class="titulo-partida">Partida en curso</h1>
 
-<canvas id="tablero" width="1280" height="720">
+<canvas id="tablero" class="tablero" width="1280" height="720">
 Tu navegador no soporta el elemento canvas, por lo que no es posible mostrar el tablero de la partida. Actualiza tu navegador para poder jugar.
 </canvas>
 
-<section>
+<section class="hud estado">
 <h2>Vida y munición</h2>
-<p>Vida: 76/100</p>
+<p class="vida">Vida: 76/100</p>
+<progress class="barra-vida" max="100" value="76">76%</progress>
 <p>Munición: 24</p>
 </section>
 
-<section>
+<section class="hud armas">
 <h2>Armas</h2>
 <ul>
 <li>Pistola básica</li>
@@ -31,9 +35,9 @@ Tu navegador no soporta el elemento canvas, por lo que no es posible mostrar el 
 </ul>
 </section>
 
-<aside>
+<aside class="hud zona">
 <h2>Minimapa</h2>
-<canvas id="minimapa" width="200" height="200">
+<canvas id="minimapa" class="minimapa" width="200" height="200">
 Tu navegador no soporta el elemento canvas, por lo que no es posible mostrar el minimapa.
 </canvas>
 <p>Fase de zona: 2</p>
@@ -41,7 +45,7 @@ Tu navegador no soporta el elemento canvas, por lo que no es posible mostrar el 
 <p>Jugadores vivos: 14 de 16</p>
 </aside>
 
-<section>
+<section class="hud eliminaciones">
 <h2>Eliminaciones recientes</h2>
 <ul>
 <li>Jugador_04 eliminó a Jugador_09</li>
@@ -49,13 +53,13 @@ Tu navegador no soporta el elemento canvas, por lo que no es posible mostrar el 
 </ul>
 </section>
 
-<section>
+<section class="hud controles-tactiles">
 <h2>Controles táctiles</h2>
 <p><button type="button">Mover</button></p>
 <p><button type="button">Disparar</button></p>
 </section>
 
-<nav>
+<nav class="salidas">
 <ul>
 <li><a href="eliminado.html">Simular eliminación</a></li>
 <li><a href="resultados.html">Simular fin de partida</a></li>

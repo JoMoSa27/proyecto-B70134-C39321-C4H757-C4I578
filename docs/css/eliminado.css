@@ -1,0 +1,234 @@
+/* Estilos para la pagina de eliminado.html */
+
+.pagina-eliminado {
+  --panel: rgb(20 26 12 / 90%);
+  --texto-suave: rgb(232 228 208 / 80%);
+}
+
+body.pagina-eliminado {
+  margin: 0;
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  background: var(--dark-background);
+}
+
+/* Tablero, zona y tarjeta comparten la misma celda de la grilla */
+.pantalla-eliminado {
+  min-height: 100vh;
+  display: grid;
+  overflow: hidden;
+}
+
+.espectador,
+.tarjeta-eliminado,
+.pantalla-eliminado::before {
+  grid-area: 1 / 1;
+}
+
+/* Tablero de fondo con la partida en curso */
+.espectador {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 16px;
+}
+
+/* Viñeta roja en los bordes: transmite que el jugador cayó */
+.espectador::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 140px rgb(179 38 30 / 45%);
+  pointer-events: none;
+}
+
+.tablero {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    var(--background),
+    var(--dark-background) 75%
+  );
+  filter: grayscale(60%) brightness(0.7);
+}
+
+.espectador h1,
+.observando {
+  z-index: 1;
+  margin: 0;
+  padding: 8px 16px;
+  background: var(--panel);
+  border: 2px solid var(--accents);
+  border-radius: var(--radio);
+}
+
+.espectador h1 {
+  color: var(--text);
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+}
+
+.observando {
+  font-family: var(--font-hud);
+}
+
+/* Círculo punteado que representa la zona cerrándose */
+.pantalla-eliminado::before {
+  content: "";
+  place-self: center;
+  width: min(80vmin, 640px);
+  aspect-ratio: 1;
+  border: 2px dashed var(--orange);
+  z-index: 1;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: zona 4s var(--ease) infinite alternate;
+}
+
+@keyframes zona {
+  from {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+
+  to {
+    transform: scale(0.9);
+    opacity: 0.4;
+  }
+}
+
+/* Tarjeta central con el resultado */
+.tarjeta-eliminado {
+  z-index: 2;
+  place-self: center;
+  width: min(100% - 32px, 520px);
+  padding: clamp(20px, 5vw, 36px);
+  text-align: center;
+  background: var(--panel);
+  border: var(--borde) solid var(--red);
+  border-radius: var(--radio-lg);
+  box-shadow: var(--sombra-3), 0 0 40px rgb(179 38 30 / 35%);
+  animation: entrada 400ms var(--ease);
+}
+
+@keyframes entrada {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Mascota en gris e inclinada, como derrotada; recupera el color al pasar el cursor */
+.mascota {
+  display: block;
+  width: 120px;
+  height: auto;
+  margin: 0 auto 12px;
+  border: 3px solid var(--red);
+  border-radius: 50%;
+  filter: grayscale(100%) brightness(0.8);
+  transform: rotate(-12deg);
+  transition: filter var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+
+.mascota:hover {
+  filter: grayscale(30%);
+  transform: rotate(0deg) scale(1.05);
+}
+
+.tarjeta-eliminado h2 {
+  margin: 0 0 16px;
+  color: var(--text);
+  font-size: clamp(1.4rem, 5vw, 2.2rem);
+  text-shadow: 3px 3px 0 var(--red);
+}
+
+/* Datos con marcador, para no depender solo del color */
+.dato {
+  margin: 6px 0 0;
+  padding: 8px 14px;
+  font-family: var(--font-hud);
+  font-size: 1.1rem;
+  background: var(--dark-background);
+  border-left: 5px solid var(--orange);
+  border-radius: var(--radio);
+}
+
+.aviso {
+  margin: 8px 0 20px;
+  color: var(--texto-suave);
+}
+
+.accion {
+  margin: 10px 0 0;
+}
+
+/* Enlaces con forma de botón */
+.boton {
+  display: inline-block;
+  min-width: 220px;
+  padding: 12px 20px;
+  color: var(--text);
+  font-family: var(--font-hud);
+  text-decoration: none;
+  border: 2px solid var(--accents);
+  border-radius: var(--radio);
+  transition: transform var(--dur) var(--ease),
+    background-color var(--dur) var(--ease), color var(--dur) var(--ease);
+}
+
+.boton:hover {
+  color: var(--dark-background);
+  background: var(--accents);
+  transform: translateY(-2px);
+}
+
+.boton-principal {
+  color: var(--dark-background);
+  font-family: var(--font-title);
+  background: var(--orange);
+  border-color: var(--orange);
+}
+
+.boton-principal:hover {
+  background: var(--text);
+  border-color: var(--text);
+}
+
+.boton-salir {
+  border-color: var(--red);
+}
+
+.boton-salir::before {
+  content: "\2715\00a0";
+}
+
+.boton-salir:hover {
+  color: var(--text);
+  background: var(--red);
+}
+
+/* Foco visible para navegar con teclado */
+.boton:focus-visible {
+  outline: 3px solid var(--text);
+  outline-offset: 3px;
+}
+
+/* Pantallas pequeñas */
+@media (width <= 600px) {
+  .boton {
+    width: 100%;
+    min-width: 0;
+  }
+}
+

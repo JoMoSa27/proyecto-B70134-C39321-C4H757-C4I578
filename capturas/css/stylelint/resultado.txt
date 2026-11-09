@@ -1,0 +1,8 @@
+Comando: npm run lint:css  (stylelint con stylelint-config-standard)
+Fecha: 2026-11-09 00:24
+
+
+> lint:css
+> stylelint "public/css/*.css"
+
+Codigo de salida: 0

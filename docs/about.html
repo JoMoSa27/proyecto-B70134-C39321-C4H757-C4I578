@@ -4,35 +4,47 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>About y Créditos — WAR BATTLE.IO</title>
-    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/tokens.css" />
+<link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/about.css" />
   </head>
-  <body>
-    <header>
-      <a href="index.html"
+  <body class="pagina-about">
+    <header class="encabezado">
+      <a href="index.html" class="enlace-logo"
         ><img
-          src="favicon.svg"
+          class="logo"
+          src="assets/favicon.svg"
           alt="Logo de WAR BATTLE.IO"
           width="40"
           height="40"
       /></a>
-      <p>WAR BATTLE.IO</p>
-      <nav>
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="faqs.html">Reglas</a></li>
-          <li><a href="about.html">About</a></li>
+      <p class="nombre-sitio">WAR BATTLE.IO</p>
+      <nav class="navegacion">
+        <ul class="lista-navegacion">
+          <li><a class="enlace-navegacion" href="index.html">Inicio</a></li>
+          <li><a class="enlace-navegacion" href="faqs.html">Reglas</a></li>
+          <li><a class="enlace-navegacion" href="about.html" aria-current="page">About</a></li>
         </ul>
       </nav>
     </header>
 
-    <main>
+    <main class="contenido-principal">
+      <img
+        src="assets/hongoArmado.png"
+        alt="Mascota del juego, un hongo soldado"
+        class="mascota"
+        width="96"
+        height="96"
+      />
       <h1>Sobre el proyecto</h1>
-      <p>CI-0137 Desarrollo de Aplicaciones Web, UCR</p>
+      <p class="subtitulo">CI-0137 Desarrollo de Aplicaciones Web, UCR</p>
 
-      <section>
+      <section class="panel">
         <h2>Equipo: Aura Farmers</h2>
-        <ul>
-          <li>
+        <ul class="equipo">
+          <li class="integrante">
+            <span class="avatar" aria-hidden="true">AQ</span>
             <h3>Alejandro Quesada</h3>
             <p>
               Servidor — protocolo de mensajes, sincronización de estado, manejo
@@ -40,7 +52,8 @@
             </p>
             <p>GitHub: <a href="https://github.com/Ale-Quesada06">@Ale-Quesada06</a></p>
           </li>
-          <li>
+          <li class="integrante">
+            <span class="avatar" aria-hidden="true">JM</span>
             <h3>Josué Morera</h3>
             <p>
               Cliente — lógica del juego del lado del cliente, modelo de estado
@@ -48,7 +61,8 @@
             </p>
             <p>GitHub: <a href="https://github.com/JoMoSa27">@JoMoSa27</a></p>
           </li>
-          <li>
+          <li class="integrante">
+            <span class="avatar" aria-hidden="true">JA</span>
             <h3>Jean Aguilar</h3>
             <p>
               Diseño — wireframes e identidad visual, documentación,
@@ -56,7 +70,8 @@
             </p>
             <p>GitHub: <a href="https://github.com/Jeanaguilarmena">@Jeanaguilarmena</a></p>
           </li>
-          <li>
+          <li class="integrante">
+            <span class="avatar" aria-hidden="true">AR</span>
             <h3>Adrián Rodríguez</h3>
             <p>
               Frontend — estructura semántica HTML, diseño responsive,
@@ -64,7 +79,8 @@
             </p>
             <p>GitHub: <a href="https://github.com/adri-Rod04">@adri-Rod04</a></p>
           </li>
-          <li>
+          <li class="integrante">
+            <span class="avatar" aria-hidden="true">JO</span>
             <h3>Jordan Obando Brenes</h3>
             <p>Maquetación de la pantalla de resultados.</p>
             <p>GitHub: <a href="https://github.com/JorBrenesJ">@JorBrenesJ</a></p>
@@ -72,9 +88,9 @@
         </ul>
       </section>
 
-      <section>
+      <section class="panel">
         <h2>Créditos y recursos externos</h2>
-        <ul>
+        <ul class="creditos">
           <li>
             Logo y favicon (<code>favicon.svg</code>): diseño original del
             equipo Aura Farmers.
@@ -90,7 +106,7 @@
         </ul>
       </section>
 
-      <section>
+      <section class="panel">
         <h2>Repositorio del proyecto</h2>
         <p>
           <a
@@ -105,14 +121,15 @@
       </section>
     </main>
 
-    <footer>
-      <p>&#169; 2026 Aura Farmers</p>
-      <p>
+    <footer class="pie-pagina">
+      <p class="copyright">&#169; 2026 Aura Farmers</p>
+      <p class="enlaces-pie">
         <a
+          class="enlace-pie"
           href="https://github.com/JoMoSa27/proyecto-B70134-C39321-C4H757-C4I578"
           >GitHub</a
         >
-        · <a href="about.html">Créditos</a> · UCR
+        · <a class="enlace-pie" href="about.html">Créditos</a> · UCR
       </p>
     </footer>
   </body>
