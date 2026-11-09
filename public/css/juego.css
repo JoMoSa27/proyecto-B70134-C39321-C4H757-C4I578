@@ -6,16 +6,12 @@
   --texto-suave: rgb(232 228 208 / 80%);
 }
 
-* {
-  box-sizing: border-box;
-}
-
 body.pagina-juego {
   margin: 0;
   color: var(--text);
   font-family: var(--font-body);
   line-height: 1.5;
-  background: var(--DarkBackGround);
+  background: var(--dark-background);
 }
 
 /* El tablero ocupa toda la pantalla y el HUD se coloca encima */
@@ -30,16 +26,16 @@ body.pagina-juego {
   overflow: hidden;
 }
 
+/* Tablero simulado con una cuadrícula mientras el canvas está vacío */
 .tablero {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  /* Cuadrícula que simula el mapa mientras no hay dibujo en el canvas */
   background:
     repeating-linear-gradient(0deg, transparent 0 59px, rgb(156 175 136 / 18%) 59px 60px),
     repeating-linear-gradient(90deg, transparent 0 59px, rgb(156 175 136 / 18%) 59px 60px),
-    radial-gradient(circle at 50% 50%, var(--Background), var(--DarkBackGround) 80%);
+    radial-gradient(circle at 50% 50%, var(--background), var(--dark-background) 80%);
 }
 
 /* Jugador simulado en el centro del tablero */
@@ -68,8 +64,7 @@ body.pagina-juego {
   z-index: 1;
   grid-column: 1;
   grid-row: 1;
-  align-self: start;
-  justify-self: start;
+  place-self: start;
   margin: 0;
   padding: 6px 14px;
   font-size: clamp(0.9rem, 2vw, 1.1rem);
@@ -77,6 +72,8 @@ body.pagina-juego {
   border: 2px solid var(--linea);
   border-radius: var(--radio);
 }
+
+/* Foco visible para navegar con teclado */
 
 /* Paneles del HUD */
 .hud {
@@ -118,7 +115,7 @@ body.pagina-juego {
   width: 160px;
   height: 160px;
   margin-bottom: 8px;
-  background: var(--DarkBackGround);
+  background: var(--dark-background);
   border: 2px solid var(--accents);
   border-radius: var(--radio);
 }
@@ -127,8 +124,7 @@ body.pagina-juego {
 .eliminaciones {
   grid-column: 1;
   grid-row: 2;
-  align-self: start;
-  justify-self: start;
+  place-self: start;
 }
 
 .eliminaciones li::before {
@@ -166,7 +162,7 @@ body.pagina-juego {
 
 .armas li {
   padding: 4px 10px;
-  background: var(--DarkBackGround);
+  background: var(--dark-background);
   border: 2px solid var(--linea);
   border-radius: var(--radio);
 }
@@ -192,7 +188,7 @@ body.pagina-juego {
   padding: 8px 16px;
   color: var(--text);
   font-family: var(--font-hud);
-  background: var(--DarkBackGround);
+  background: var(--dark-background);
   border: 2px solid var(--accents);
   border-radius: var(--radio);
   cursor: pointer;
@@ -201,7 +197,7 @@ body.pagina-juego {
 }
 
 .controles-tactiles button:hover {
-  color: var(--DarkBackGround);
+  color: var(--dark-background);
   background: var(--accents);
 }
 
@@ -238,15 +234,8 @@ body.pagina-juego {
 }
 
 .salidas a:hover {
-  color: var(--DarkBackGround);
+  color: var(--dark-background);
   background: var(--accents);
-}
-
-/* Foco para navegar con teclado */
-a:focus-visible,
-button:focus-visible {
-  outline: 3px solid var(--orange);
-  outline-offset: 3px;
 }
 
 /* Pantallas pequeñas: el HUD se apila */
@@ -274,13 +263,3 @@ button:focus-visible {
   }
 }
 
-/* Sin animaciones si el usuario lo prefiere */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    transition-duration: 0.01ms !important;
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-  }
-}

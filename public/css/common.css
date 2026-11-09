@@ -1,0 +1,172 @@
+/* Estilos compartidos: reset, encabezado, menú, pie de página, foco y movimiento reducido */
+
+* {
+  box-sizing: border-box;
+}
+
+/* Foco visible para navegar con teclado */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+}
+
+/* Encabezado y navegación */
+.encabezado {
+  width: 100%;
+  min-height: 82px;
+  padding: 14px clamp(20px, 5vw, 72px);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgb(20 26 12 / 94%);
+  border-bottom: 2px solid rgb(156 175 136 / 45%);
+  box-shadow: var(--sombra-1);
+}
+
+.enlace-logo {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  border-radius: var(--radio);
+}
+
+.logo {
+  display: block;
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  transition: transform var(--dur) var(--ease), filter var(--dur) var(--ease);
+}
+
+.enlace-logo:hover .logo,
+.enlace-logo:focus-visible .logo {
+  transform: rotate(-8deg) scale(1.08);
+  filter: drop-shadow(0 0 6px var(--orange));
+}
+
+.nombre-sitio {
+  margin: 0 auto 0 0;
+  color: var(--text);
+  font-family: var(--font-title);
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  letter-spacing: 0.06em;
+}
+
+.lista-navegacion {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 2vw, 26px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.enlace-navegacion {
+  display: inline-block;
+  padding: 9px 14px;
+  color: var(--text);
+  font-family: var(--font-hud);
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: var(--radio);
+  transition: color var(--dur) var(--ease),
+    background-color var(--dur) var(--ease),
+    border-color var(--dur) var(--ease);
+}
+
+.enlace-navegacion:hover,
+.enlace-navegacion:focus-visible {
+  color: var(--dark-background);
+  background: var(--accents);
+  border-color: var(--text);
+}
+
+/* La página actual se marca con borde y subrayado, no solo con color */
+.enlace-navegacion[aria-current="page"] {
+  border-color: var(--orange);
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+/* Pie de página */
+.pie-pagina {
+  width: 100%;
+  padding: 16px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px 20px;
+  color: rgb(232 228 208 / 80%);
+  background: var(--dark-background);
+  border-top: 1px solid rgb(156 175 136 / 40%);
+  font-size: 0.9rem;
+}
+
+.copyright,
+.enlaces-pie {
+  margin: 0;
+}
+
+.enlace-pie {
+  color: var(--accents);
+  text-decoration: none;
+  transition: color var(--dur) var(--ease);
+}
+
+.enlace-pie:hover,
+.enlace-pie:focus-visible {
+  color: var(--orange);
+  text-decoration: underline;
+}
+
+/* Pantallas pequeñas */
+@media (width <= 600px) {
+  .encabezado {
+    padding: 12px 16px;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+  }
+
+  .logo {
+    width: 38px;
+    height: 38px;
+  }
+
+  .nombre-sitio {
+    font-size: 1rem;
+  }
+
+  .navegacion {
+    width: 100%;
+  }
+
+  .lista-navegacion {
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .enlace-navegacion {
+    padding: 7px 11px;
+    font-size: 0.85rem;
+  }
+
+  .pie-pagina {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+/* Sin animaciones si el usuario lo prefiere */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

@@ -2,13 +2,11 @@
 
 :root {
   /* Paleta de colores */
-  --Background: #4A5D23; /* fondo principal */
-  --DarkBackGround: #141A0C; /* fondo oscuro */
+  --background: #4A5D23; /* fondo principal */
+  --dark-background: #141A0C; /* fondo oscuro */
   --accents: #9CAF88; /* bordes y acentos */
-
   --text: #E8E4D0; /* texto principal */
-  --OtherText: #5C5F55; /* texto secundario */
-
+  --other-text: #5C5F55; /* texto secundario */
   --orange: #E8751A; /* botones principales */
   --red: #B3261E; /* acciones peligrosas y eliminación */
 
@@ -27,13 +25,13 @@
   --radio-xl:       30px;
 
   /* Sombras en dos capas: una cercana y otra lejana */
-  --sombra-1:  0 1px 2px rgba(20, 26, 12, .25),
-               0 8px 16px -8px rgba(20, 26, 12, .55);
-  --sombra-2:  0 2px 4px rgba(20, 26, 12, .25),
-               0 18px 34px -14px rgba(20, 26, 12, .6);
-  --sombra-3:  0 4px 8px rgba(10, 14, 6, .3),
-               0 34px 70px -20px rgba(10, 14, 6, .8);
-  --brillo:    inset 0 2px 0 rgba(255, 255, 255, .7);   /* filo de luz arriba */
+  --sombra-1:  0 1px 2px rgb(20 26 12 / 25%),
+               0 8px 16px -8px rgb(20 26 12 / 55%);
+  --sombra-2:  0 2px 4px rgb(20 26 12 / 25%),
+               0 18px 34px -14px rgb(20 26 12 / 60%);
+  --sombra-3:  0 4px 8px rgb(10 14 6 / 30%),
+               0 34px 70px -20px rgb(10 14 6 / 80%);
+  --brillo:    inset 0 2px 0 rgb(255 255 255 / 70%);   /* filo de luz arriba */
 
   /* Movimiento */
   --ease:      cubic-bezier(.2, .8, .2, 1);   /* arranca rápido, frena suave */
@@ -51,24 +49,31 @@ h1, h2 {
 body { 
 	font-family: var(--font-body); 
 	color: var(--text); 
-	background: var(--DarkBackGround); 
+	background: var(--dark-background); 
 	line-height: 1.5; 
 }
 
-@media (max-width: 600px) {
-  html { font-size: 16px; }
+/* Ajustes de texto y botones en pantallas pequeñas */
+@media (width <= 600px) {
+  h1 {
+    font-size: 2rem;
+    line-height: 1.1;
+    letter-spacing: 0.04em;
+  }
 
-  h1 { font-size: 2rem;    line-height: 1.1; letter-spacing: 0.04em; }
-  h2 { font-size: 1.5rem;  line-height: 1.2; }
-  h3 { font-size: 1.25rem; line-height: 1.25; }
+  h2 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
 
-  body { font-size: 1rem; line-height: 1.5; }
-  .text-small { font-size: 0.875rem; }
-  .caption { font-size: 0.75rem; }
+  h3 {
+    font-size: 1.25rem;
+    line-height: 1.25;
+  }
 
-  button, .btn { font-size: 1rem; padding: 0.75rem 1.25rem; min-height: 44px; }
-  .label { font-size: 0.8125rem; letter-spacing: 0.06em; }
-
-  .hud { font-size: 0.875rem; }
-  .hud-big { font-size: 1.5rem; }
+  button {
+    min-height: 44px;
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+  }
 }

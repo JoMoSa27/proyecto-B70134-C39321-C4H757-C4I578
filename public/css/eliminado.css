@@ -5,16 +5,12 @@
   --texto-suave: rgb(232 228 208 / 80%);
 }
 
-* {
-  box-sizing: border-box;
-}
-
 body.pagina-eliminado {
   margin: 0;
   color: var(--text);
   font-family: var(--font-body);
   line-height: 1.5;
-  background: var(--DarkBackGround);
+  background: var(--dark-background);
 }
 
 /* Tablero, zona y tarjeta comparten la misma celda de la grilla */
@@ -56,8 +52,8 @@ body.pagina-eliminado {
   height: 100%;
   background: radial-gradient(
     circle at 50% 50%,
-    var(--Background),
-    var(--DarkBackGround) 75%
+    var(--background),
+    var(--dark-background) 75%
   );
   filter: grayscale(60%) brightness(0.7);
 }
@@ -132,6 +128,24 @@ body.pagina-eliminado {
   }
 }
 
+/* Mascota en gris e inclinada, como derrotada; recupera el color al pasar el cursor */
+.mascota {
+  display: block;
+  width: 120px;
+  height: auto;
+  margin: 0 auto 12px;
+  border: 3px solid var(--red);
+  border-radius: 50%;
+  filter: grayscale(100%) brightness(0.8);
+  transform: rotate(-12deg);
+  transition: filter var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+
+.mascota:hover {
+  filter: grayscale(30%);
+  transform: rotate(0deg) scale(1.05);
+}
+
 .tarjeta-eliminado h2 {
   margin: 0 0 16px;
   color: var(--text);
@@ -145,7 +159,7 @@ body.pagina-eliminado {
   padding: 8px 14px;
   font-family: var(--font-hud);
   font-size: 1.1rem;
-  background: var(--DarkBackGround);
+  background: var(--dark-background);
   border-left: 5px solid var(--orange);
   border-radius: var(--radio);
 }
@@ -174,13 +188,13 @@ body.pagina-eliminado {
 }
 
 .boton:hover {
-  color: var(--DarkBackGround);
+  color: var(--dark-background);
   background: var(--accents);
   transform: translateY(-2px);
 }
 
 .boton-principal {
-  color: var(--DarkBackGround);
+  color: var(--dark-background);
   font-family: var(--font-title);
   background: var(--orange);
   border-color: var(--orange);
@@ -218,13 +232,3 @@ body.pagina-eliminado {
   }
 }
 
-/* Sin animaciones si el usuario lo prefiere */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    transition-duration: 0.01ms !important;
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-  }
-}
