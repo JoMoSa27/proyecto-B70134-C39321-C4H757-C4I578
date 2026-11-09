@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Barlow:wght@400;600&family=Share+Tech+Mono&display=swap');
+
+:root {
+  /* --- Paleta de colores ------------------------------------------------ */
+  --Background: 		#4A5D23; /*color principal, fondo normal*/
+  --DarkBackGround: #141A0C; /*Color mas oscuro para fondos*/
+  --accents: 				#9CAF88; /*Color claro para bordes u otros acentos*/
+
+  --text: 					#E8E4D0; /*principal para textos*/
+  --OtherText: 			#5C5F55; /*para otros textos en donde el text normal no sirva*/
+
+  --orange: 				#E8751A; /*para otros acentos como botones importantes principales*/
+  --red: 						#B3261E; /*rojos para acciones o botones*/
+
+  /* --- Medidas repetidas ------------------------------------------------- */
+  --radio:          10px;     /* esquinas de tarjetas y paneles */
+  --radio-pastilla: 999px;    /* esquinas de las pastillas: siempre redondas */
+  --borde:          3px;      /* grosor del borde de tarjetas */
+
+  /* --- Tipografía -------------------------------------------------------*/
+  --font-title: 'Black Ops One', system-ui, sans-serif;
+  --font-body: 'Barlow', system-ui, sans-serif;
+  --font-hud: 'Share Tech Mono', ui-monospace, monospace;
+
+  /* --- Radios más generosos ---------------------------------------------- */
+  --radio-lg:       24px;
+  --radio-xl:       30px;
+
+  /* --- Sombras: siempre en capas (una cercana + una lejana y difusa) ----- */
+  --sombra-1:  0 1px 2px rgba(20, 44, 82, .12),
+               0 8px 16px -8px rgba(20, 44, 82, .45);
+  --sombra-2:  0 2px 4px rgba(20, 44, 82, .10),
+               0 18px 34px -14px rgba(20, 44, 82, .55);
+  --sombra-3:  0 4px 8px rgba(10, 24, 48, .15),
+               0 34px 70px -20px rgba(10, 24, 48, .75);
+  --brillo:    inset 0 2px 0 rgba(255, 255, 255, .7);   /* filo de luz arriba */
+
+  /* --- Movimiento -------------------------------------------------------- */
+  --ease:      cubic-bezier(.2, .8, .2, 1);   /* arranca rápido, frena suave */
+  --dur:       220ms;
+}
+
+/*-- Title format -----------------------------------------------------------*/
+h1, h2 { 
+	font-family: var(--font-title); 
+	letter-spacing: 0.05em; 
+	text-transform: uppercase; color: var(--bone);
+}
+
+/*-- Text format ------------------------------------------------------------*/
+body { 
+	font-family: var(--font-body); 
+	color: var(--bone); 
+	background: var(--bg); 
+	line-height: 1.5; 
+}
