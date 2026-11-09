@@ -17,7 +17,7 @@ body.pagina-eliminado {
   background: var(--DarkBackGround);
 }
 
-/* El tablero, la zona y la tarjeta se agrupan en la misma celda*/
+/* Tablero, zona y tarjeta comparten la misma celda de la grilla */
 .pantalla-eliminado {
   min-height: 100vh;
   display: grid;
@@ -38,6 +38,15 @@ body.pagina-eliminado {
   align-items: flex-start;
   gap: 6px;
   padding: 16px;
+}
+
+/* Viñeta roja en los bordes: transmite que el jugador cayó */
+.espectador::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 140px rgb(179 38 30 / 45%);
+  pointer-events: none;
 }
 
 .tablero {
@@ -72,7 +81,7 @@ body.pagina-eliminado {
   font-family: var(--font-hud);
 }
 
-/* Círculo punteado que representa la zona cerrándose para darle más dinamismo*/
+/* Círculo punteado que representa la zona cerrándose */
 .pantalla-eliminado::before {
   content: "";
   place-self: center;
@@ -107,7 +116,7 @@ body.pagina-eliminado {
   background: var(--panel);
   border: var(--borde) solid var(--red);
   border-radius: var(--radio-lg);
-  box-shadow: var(--sombra-3);
+  box-shadow: var(--sombra-3), 0 0 40px rgb(179 38 30 / 35%);
   animation: entrada 400ms var(--ease);
 }
 
@@ -127,12 +136,18 @@ body.pagina-eliminado {
   margin: 0 0 16px;
   color: var(--text);
   font-size: clamp(1.4rem, 5vw, 2.2rem);
+  text-shadow: 3px 3px 0 var(--red);
 }
 
+/* Datos con marcador, para no depender solo del color */
 .dato {
-  margin: 0;
+  margin: 6px 0 0;
+  padding: 8px 14px;
   font-family: var(--font-hud);
   font-size: 1.1rem;
+  background: var(--DarkBackGround);
+  border-left: 5px solid var(--orange);
+  border-radius: var(--radio);
 }
 
 .aviso {
@@ -180,12 +195,16 @@ body.pagina-eliminado {
   border-color: var(--red);
 }
 
+.boton-salir::before {
+  content: "\2715\00a0";
+}
+
 .boton-salir:hover {
   color: var(--text);
   background: var(--red);
 }
 
-/* Para navegar con teclado */
+/* Foco visible para navegar con teclado */
 .boton:focus-visible {
   outline: 3px solid var(--text);
   outline-offset: 3px;
@@ -199,7 +218,7 @@ body.pagina-eliminado {
   }
 }
 
-/* Sin animaciones en caso de que el usuario no quiera */
+/* Sin animaciones si el usuario lo prefiere */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
